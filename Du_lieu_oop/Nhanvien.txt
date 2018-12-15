@@ -1,0 +1,4 @@
+H1 NguyenVanA 15/05/1996 6trieu
+H2 NguyenVanB 14/03/1997 6trieu
+H3 NguyenVanC 08/11/1992 5trieu
+H4 NguyenVanD 25/10/1987 5trieu
