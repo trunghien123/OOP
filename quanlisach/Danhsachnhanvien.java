@@ -40,8 +40,8 @@ public class Danhsachnhanvien {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhap so luong nhan vien:");
         this.n = sc.nextInt();
-        for(int i=0; i<n; i++)
-            dsnv = Arrays.copyOf(dsnv, n);
+        dsnv = Arrays.copyOf(dsnv, n);
+        for(int i=0; i<n; i++) 
         {
             dsnv[i] = new Nhanvien();
             dsnv[i].Nhap();
@@ -85,36 +85,96 @@ public class Danhsachnhanvien {
       dsnv[n].Nhap();
       n++;
     }
-    public void Themk(int k)
+  //Them nhieu nhan vien
+    public void Themk()
     {
-        for(int i=0; i<k; i++)
-        {
-            Them();
-        }
+   	 int k;
+   	 System.out.println("\nMoi ban nhap vao so luong can them: ");
+   	 Scanner in = new Scanner(System.in);
+   	 k = in.nextInt();
+   	 in.nextLine();
+   	 for(int i=0 ; i<k;i++)
+   	 {
+   		 Them();
+   	 }
     }
-     public void Sapxeptheoma(){
-        for(int i = 0 ; i < n-1 ; i++)
-        {
-            for(int j = i + 1 ; j < n ; j++)
-            {
-                if(dsnv[i].getManhanvien().compareToIgnoreCase(dsnv[j].getManhanvien())> 0)
-                {
-                    Nhanvien a = new Nhanvien(dsnv[i]);
-                    dsnv[i] = dsnv[j];
-                    dsnv[j] = a;
-                  
-                }
-            }
-        }
+    public void Suatheoma()
+    {
+    	String ma;
+    	Scanner in = new Scanner(System.in);
+    	System.out.println("\nNhap vao ma can sua: ");
+    	ma = in.nextLine();
+    	String manhanvienmoi;
+    	String tennhanvienmoi;
+    	String ngaysinhmoi;
+    	String luongmoi;
+    	for(int i=0;i < n ;i++)
+    	{
+    		if(dsnv[i].getManhanvien().equals(ma))
+    		{
+    			int luachon;
+	    		while(true)
+	    		{
+	    			System.out.println("\n1.Sua ma nhan vien.");
+	    			System.out.println("\n2.Sua ten nhan vien.");
+	    			System.out.println("\n3.Sua ngay sinh.");
+	    			System.out.println("\n4.Sua luong.");
+	    			System.out.println("\n5.Thoat.");
+	    			luachon=in.nextInt();
+	    			in.nextLine();
+	    			if(luachon<1 || luachon>5)
+	    			{
+	    				System.out.println("Ban da nhap sai lua chon.!!!");
+	    			}
+	    			if(luachon==1)
+	    			{
+	    				System.out.println("\nNhap vao ma nhan vien moi: ");
+	    				manhanvienmoi = in.nextLine();
+	    				dsnv[i].setManhanvien(manhanvienmoi);
+	    			}
+	    			if(luachon==2)
+	    			{
+	    				System.out.println("\nNhap vao ten nhan vien moi: ");
+	    				tennhanvienmoi = in.nextLine();
+	    				dsnv[i].setTennhanvien(tennhanvienmoi);
+	    			}
+	    			if(luachon==3)
+	    			{
+	    				System.out.println("\nNhap vao ngay sinh moi: ");
+	    				ngaysinhmoi = in.nextLine();
+	    				dsnv[i].setNgaysinh(ngaysinhmoi);
+	    			}
+	    			if(luachon==4)
+	    			{
+	    				System.out.println("\nNhap vao luong moi: ");
+	    				luongmoi = in.nextLine();
+	    				dsnv[i].setLuong(luongmoi);
+	    			}
+	    			if(luachon==1)
+	    			{
+	    				System.out.println("\nNhap vao ma nhan vien moi: ");
+	    				manhanvienmoi = in.nextLine();
+	    				dsnv[i].setManhanvien(manhanvienmoi);
+	    			}
+	    		}
+    		}
+    	}
     }
-     
-   public void Timkiemtheoma(String ma)
+   public void Timkiemtheoma()
    {
+	   String ma;
+	   Scanner in = new Scanner(System.in);
+	   System.out.println("\nNhap vao ma can tim kiem: ");
+	   ma = in.nextLine();
+	   System.out.printf("\n%-100s","______________________________________________________________________________________________________________________________________________________");
+	   System.out.printf("\n|%-13s|%-13s|%-13s|%-10s|","manhanvien","tennhanvien","ngaysinh","luong");
+		System.out.printf("\n|%-100s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
        for(int i = 0 ; i < n ; i++)
        {
            if(dsnv[i].getManhanvien().equals(ma))
            {
-               System.out.println(dsnv[i].toString());
+        	   dsnv[i].Xuat();
+        	   System.out.printf("\n|%-10s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
            }
        }
    }

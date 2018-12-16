@@ -60,7 +60,7 @@ public void Nhap()
 }
 public void Xuat()
 	{
-		System.out.printf("\n|%-15s|%-15s|%-15s|%-15s|%-15s",makhachhang,hokhachhang,hokhachhang,diachi,dienthoai);
+		System.out.printf("\n|%-15s|%-15s|%-15s|%-15s|%-15s",makhachhang,hokhachhang,tenkhachhang,diachi,dienthoai);
 		
 	}
 public String getMakhachhang()

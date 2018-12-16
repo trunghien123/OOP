@@ -66,14 +66,20 @@ public class Danhsachnhaxuatban {
         dsnxb[n].Nhap();
         n++;
     }
-    public void ThemK(int k)
+  //Them nhieu nha san xuat
+    public void Themk()
     {
-        for(int i=0;i<k;i++)
-        {
-            Them();
-        }
+   	 int k;
+   	 System.out.println("\nMoi ban nhap vao so luong can them: ");
+   	 Scanner in = new Scanner(System.in);
+   	 k = in.nextInt();
+   	 in.nextLine();
+   	 for(int i=0 ; i<k;i++)
+   	 {
+   		 Them();
+   	 }
     }
-    public void xoavt(int vitrixoa)
+    public void Xoavt(int vitrixoa)
     {
         for(int i=vitrixoa;i<n;i++)
         {
@@ -87,17 +93,25 @@ public class Danhsachnhaxuatban {
         {
             if(dsnxb[i].getManhaxuatban().equals(ma))
             {
-                xoavt(i);
+                Xoavt(i);
             }
         }
     }
-    public void Timkiemtheoma(String ma)
+    public void Timkiemtheoma()
     {
+    	String ma;
+    	System.out.println("\nNhap vao ma can tim kiem: ");
+    	Scanner in = new Scanner(System.in);
+    	ma=in.nextLine();
+    	System.out.printf("\n%-20s","___________________________________________________________________________________________________________________");
+        System.out.printf("\n|%-25s|%-25s|%-25s|%-25s|","Ma nha xuat ban","Ten nha xuat ban","Dia chi","So dien thoai");
+        System.out.printf("\n%-20s","-------------------------------------------------------------------------------------------------------------------");
         for(int i=0;i<n;i++)
         {
             if(dsnxb[i].getManhaxuatban().equals(ma))
             {
-                System.out.println(dsnxb[i].toString());
+            	dsnxb[i].Xuat();
+            	 System.out.printf("\n%-20s","----------------------------------------------------------------------------------------------------------------------");
             }
         }
     }
@@ -114,70 +128,60 @@ public class Danhsachnhaxuatban {
         return dem;
             
     }
-    public void sepxeptheoten()
-    {
-        for(int i=0;i<n-1;i++)
-        {
-            for(int j=i+1;j<n;j++)
-            {
-                if(dsnxb[i].getTennhaxuatban().compareTo(dsnxb[j].getTennhaxuatban())>0)
-                {
-                    Nhaxuatban n=new Nhaxuatban();
-                    n=dsnxb[i];
-                    dsnxb[i]=dsnxb[j];
-                    dsnxb[j]=n;
-                    
-                }
-            }
-        }
-    }
-    public void suathema(String ma)
+    public void Suatheoma()
     {
         Scanner sc=new Scanner(System.in);
+        System.out.println("\nNhap vao ma de sua: ");
+        String ma;
+        ma=sc.nextLine();
         String manhaxuatbanmoi;
         String tennhaxuatbanmoi;
         String diachimoi;
         String sodienthoaimoi;
         for(int i=0;i<n;i++)
         {
-            int luachon;
-            while(true)
+        	if(dsnxb[i].getManhaxuatban().equals(ma))
             {
-                System.out.println("\n1.Sua ma.");
-                System.out.println("\n2.Sua ten.");
-                System.out.println("\n3.Sua dia chi.");
-                System.out.println("\n4.Sua so dien thoai.");
-                System.out.println("\n5.Thoat.");
-                System.out.println("\nMoi ban Nhap lua chon: ");
-                luachon=sc.nextInt();
-                if(luachon==1)
-                {
-                    System.out.println("\nMoi ban Nhap ma moi:");
-                    manhaxuatbanmoi=sc.nextLine();
-                    dsnxb[i].setManhaxuatban(manhaxuatbanmoi);
-                }
-                if(luachon==2)
-                {
-                    System.out.println("\nMoi ban Nhap ten moi:");
-                    tennhaxuatbanmoi=sc.nextLine();
-                    dsnxb[i].setTennhaxuatban(tennhaxuatbanmoi);
-                }
-                if(luachon==3)
-                {
-                    System.out.println("\nMoi ban Nhap dia chi moi:");
-                    diachimoi=sc.nextLine();
-                    dsnxb[i].setDiachi(diachimoi);
-                }
-                if(luachon==4)
-                {
-                    System.out.println("\nMoi ban Nhap so dien thoai moi:");
-                    sodienthoaimoi=sc.nextLine();
-                    dsnxb[i].setDienthoai(sodienthoaimoi);
-                }
-                if(luachon==5)
-                {
-                    break;
-                }
+        		int luachon;
+	            while(true)
+	            {
+	                System.out.println("\n1.Sua ma.");
+	                System.out.println("\n2.Sua ten.");
+	                System.out.println("\n3.Sua dia chi.");
+	                System.out.println("\n4.Sua so dien thoai.");
+	                System.out.println("\n5.Thoat.");
+	                System.out.println("\nMoi ban Nhap lua chon: ");
+	                luachon=sc.nextInt();
+	                sc.nextLine();
+	                if(luachon==1)
+	                {
+	                    System.out.println("\nMoi ban Nhap ma moi:");
+	                    manhaxuatbanmoi=sc.nextLine();
+	                    dsnxb[i].setManhaxuatban(manhaxuatbanmoi);
+	                }
+	                if(luachon==2)
+	                {
+	                    System.out.println("\nMoi ban Nhap ten moi:");
+	                    tennhaxuatbanmoi=sc.nextLine();
+	                    dsnxb[i].setTennhaxuatban(tennhaxuatbanmoi);
+	                }
+	                if(luachon==3)
+	                {
+	                    System.out.println("\nMoi ban Nhap dia chi moi:");
+	                    diachimoi=sc.nextLine();
+	                    dsnxb[i].setDiachi(diachimoi);
+	                }
+	                if(luachon==4)
+	                {
+	                    System.out.println("\nMoi ban Nhap so dien thoai moi:");
+	                    sodienthoaimoi=sc.nextLine();
+	                    dsnxb[i].setDienthoai(sodienthoaimoi);
+	                }
+	                if(luachon==5)
+	                {
+	                    break;
+	                }
+	            }
             }
         }
     }

@@ -79,7 +79,7 @@ public class Danhsachsach {
 		}
 	}
         
-       
+  //Them 1 quyen sach     
  public void Them() throws IOException
  {
 	 Scanner sc=new Scanner(System.in);
@@ -110,6 +110,7 @@ public class Danhsachsach {
 		 else { break;}
 	 }
  }
+ //Them nhieu quyen sach
  public void Themk(int k) throws IOException
  {
 	 dss=Arrays.copyOf(dss, n+k);
@@ -118,6 +119,7 @@ public class Danhsachsach {
 		 Them();
 	 }
  }
+ //Xoa theo vi tri
  public void xoavt(int vitrixoa)
  {
 	 for(int i=vitrixoa ; i<n-1 ;i++)
@@ -127,6 +129,7 @@ public class Danhsachsach {
 	 dss = Arrays.copyOf(dss, n-1);
 	 n--;
  }
+ //Xoa theo ma sach
  public void Xoatheoma(String Masach)
  {
 	 for(int i=0 ;i<n; i++)
@@ -138,7 +141,9 @@ public class Danhsachsach {
 		 }
 	 }
  }
- public int Timkiemtheoma(String Masach)
+ //Tim kiem vi tri theo ma sach
+ //ho tro cho ham sua
+ public int TimKiemVitriTheoMaSach(String Masach)
  {
 	 int a = 0;
 	 for(int i=0 ;i<n; i++)
@@ -151,80 +156,218 @@ public class Danhsachsach {
 	 }
 	 return a;
  }
- //??????????????????????????????
- public void tim_kiem_theo_masach(String Masach)
+ //Sua theo ma sach
+ public void Suatheomasach(String masach)
  {
-	 for(int i=0;i<n;i++)
+	// String masach;
+	 String tensach;
+	 String matacgia;
+	 String manhasanxuat;
+	 String maloai;
+	 int dongia;
+	 int soluong;
+	 Scanner in=new Scanner(System.in);
+	 int timkiem = TimKiemVitriTheoMaSach(masach);
+	 if(dss[timkiem] instanceof Sachgiaokhoa)
+	 {
+		 String mon;
+		 String lop;
+		 Sachgiaokhoa sgk = new Sachgiaokhoa();
+		 sgk = (Sachgiaokhoa) dss[timkiem];
+		 System.out.println("\n1 nhap sua ma sach.");
+		 System.out.println("\n2 nhap sua ten sach.");
+		 System.out.println("\n3 nhap sua ma tac gia.");
+		 System.out.println("\n4 nhap sua ma nha san xuat.");
+		 System.out.println("\n5 nhap sua ma loai sach.");
+		 System.out.println("\n6 nhap sua mon hoc.");
+		 System.out.println("\n7 nhap sua lop hoc.");
+		 System.out.println("\n8 nhap sua don gia.");
+		 System.out.println("\n9 nhap sua so luong.");
+		 System.out.println("\n10 nhap de thoat.");
+		 	int luachon;
+		 while(true)
+		 {
+			 System.out.println("Moi ban nhap vao lua chon: ");
+			 luachon=in.nextInt();
+			 		 in.nextLine();
+			 if(luachon==1)
+			 {
+				 System.out.println("Moi nhap vao ma sach moi: ");
+				 masach=in.nextLine();
+				 sgk.setMasach(masach);
+			 }
+			 if(luachon==2)
+			 {
+				 System.out.println("Moi nhap vao ten sach moi: ");
+				 tensach=in.nextLine();
+				 sgk.setTensach(tensach);;
+			 }
+			 if(luachon==3)
+			 {
+				 System.out.println("Moi nhap vao ma tac gia moi: ");
+				 matacgia=in.nextLine();
+				 sgk.setMatacgia(matacgia);
+			 }
+			 if(luachon==4)
+			 {
+				 System.out.println("Moi nhap vao ma nha san xuat moi: ");
+				 manhasanxuat=in.nextLine();
+				 sgk.setManhasanxuat(manhasanxuat);;
+			 }
+			 if(luachon==5)
+			 {
+				 System.out.println("Moi nhap vao ma loai sach moi: ");
+				 maloai=in.nextLine();
+				 sgk.setMaloai(maloai);
+			 }
+			 if(luachon==6)
+			 {
+				 System.out.println("Moi nhap vao mon hoc moi: ");
+				 mon=in.nextLine();
+				 sgk.setMon(mon);
+			 }
+			 if(luachon==7)
+			 {
+				 System.out.println("Moi nhap vao lop hoc moi: ");
+				 lop=in.nextLine();
+				 sgk.setLop(lop);
+			 }
+			 if(luachon==8)
+			 {
+				 System.out.println("Moi nhap vao don gia moi: ");
+				 dongia=in.nextInt();
+				 sgk.setDongia(dongia);
+			 }
+			 if(luachon==9)
+			 {
+				 System.out.println("Moi nhap vao so luong moi: ");
+				 soluong=in.nextInt();
+				 sgk.setSoluong(soluong);
+			 }
+			 if(luachon==10)
+			 {
+				 break;
+			 }
+		 }
+		 dss[timkiem] = new Sachgiaokhoa(sgk);
+	 }
+	 else if(dss[timkiem] instanceof Truyen)
+	 {
+		 String luatuoi;
+		 String chude;
+		 Truyen t = new Truyen();
+		 t=(Truyen) dss[timkiem];
+		 System.out.println("\n1 nhap sua ma sach.");
+		 System.out.println("\n2 nhap sua ten sach.");
+		 System.out.println("\n3 nhap sua ma tac gia.");
+		 System.out.println("\n4 nhap sua ma nha san xuat.");
+		 System.out.println("\n5 nhap sua ma loai sach.");
+		 System.out.println("\n6 nhap sua don gia.");
+		 System.out.println("\n7 nhap sua so luong.");
+		 System.out.println("\n8 nhap sua lua tuoi.");
+		 System.out.println("\n9 nhap sua chu de.");
+		 System.out.println("\n10 nhap de thoat.");
+		  int luachon;
+		 while (true)
+		 {
+			 System.out.println("Moi ban nhap vao lua chon: ");
+			 luachon=in.nextInt();
+			 		 in.nextLine();
+			 if(luachon==1)
+			 {
+				 System.out.println("Moi nhap vao ma sach moi: ");
+				 masach=in.nextLine();
+				 t.setMasach(masach);
+			 }
+			 if(luachon==2)
+			 {
+				 System.out.println("Moi nhap vao ten sach moi: ");
+				 tensach=in.nextLine();
+				 t.setTensach(tensach);;
+			 }
+			 if(luachon==3)
+			 {
+				 System.out.println("Moi nhap vao ma tac gia moi: ");
+				 matacgia=in.nextLine();
+				 t.setMatacgia(matacgia);
+			 }
+			 if(luachon==4)
+			 {
+				 System.out.println("Moi nhap vao ma nha san xuat moi: ");
+				 manhasanxuat=in.nextLine();
+				 t.setManhasanxuat(manhasanxuat);;
+			 }
+			 if(luachon==5)
+			 {
+				 System.out.println("Moi nhap vao ma loai sach moi: ");
+				 maloai=in.nextLine();
+				 t.setMaloai(maloai);
+			 }
+			 if(luachon==6)
+			 {
+				 System.out.println("Moi nhap vao ma don gia moi: ");
+				 dongia=in.nextInt();
+				 t.setDongia(dongia);
+			 }
+			 if(luachon==7)
+			 {
+				 System.out.println("Moi nhap vao so luong moi: ");
+				 soluong=in.nextInt();
+				 t.setSoluong(soluong);
+			 }
+			 if(luachon==8)
+			 {
+				 System.out.println("Moi nhap vao lua tuoi moi: ");
+				 luatuoi=in.nextLine();
+				 t.setLuatuoi(luatuoi);
+			 }
+			 if(luachon==9)
+			 {
+				 System.out.println("Moi nhap vao chu de moi: ");
+				 chude=in.nextLine();
+				 t.setChude(chude);
+			 }
+			 if(luachon==10)
+			 {
+				 break;
+			 }
+		 }
+		 dss[timkiem] = new Truyen(t);
+		 
+		 
+	 }
+ }
+ public void Timkiemtheoma(String Masach)
+ {
+	 System.out.println("\nDanh sach sau khi tim kiem: ");
+	System.out.printf("\n%-100s","______________________________________________________________________________________________________________________________________________________");
+	System.out.printf("\n|%-10s|%-30s|%-10s|%-15s|%-15s|%-10s|%-10s|%-10s|%-30s|","Masach","Tensach","Matacgia","Manhasanxuat","Maloaisach","Magiamgia","Soluong","Dongia","Kethua");
+	System.out.printf("\n|%-100s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
+	 for(int i=0 ;i<n; i++)
 	 {
 		 if(dss[i].getMasach().equals(Masach))
 		 {
-			 dss[i].toString();
+			 dss[i].Xuat();
+			 System.out.printf("\n|%-10s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
 		 }
 	 }
  }
- public void tim_kiem_theo_tensach(String Tensach)
+ public void Timkiemtheotensach(String Tensach)
  {
+	 System.out.println("\nDanh sach sau khi tim kiem theo ten sach: ");
+	 System.out.printf("\n%-100s","______________________________________________________________________________________________________________________________________________________");
+	 System.out.printf("\n|%-10s|%-30s|%-10s|%-15s|%-15s|%-10s|%-10s|%-10s|%-30s|","Masach","Tensach","Matacgia","Manhasanxuat","Maloaisach","Magiamgia","Soluong","Dongia","Kethua");
+	 System.out.printf("\n|%-100s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
 	 for(int i=0;i<n;i++)
 	 {
 		 if(dss[i].getTensach().equalsIgnoreCase(Tensach))
 		 {
-			 dss[i].toString();
+			 dss[i].Xuat();
+			 System.out.printf("\n|%-10s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
 		 }
 	 }
  }
- //???????????????????????????/^^^^^^^^^^^^^^.^^^
- public void swap1(Sach a,Sach b)
- {
-     Sachgiaokhoa tam = new Sachgiaokhoa((Sachgiaokhoa)a);
-     a = (Sachgiaokhoa)b;
-     b = tam;
-     
- }
- public void swap2(Sach a,Sach b)
- {
-     Truyen tam = new Truyen((Truyen)a);
-     a = (Truyen)b;
-     b = tam;
- }
- public void swap3(Sach a,Sach b)
- {
-    Sachgiaokhoa tam1 = new Sachgiaokhoa((Sachgiaokhoa)a);
-     Truyen tam2 = new Truyen((Truyen)b);
-     a = tam2;
-     b = tam1;
-    
-    
- }
-
- public void sort_tensach()
- {
-	 for(int i=0;i<n-1;i++)
-	 {
-		 for(int j=i+1;j<n;j++)
-		 {
-			 if(dss[i].getTensach().compareTo(dss[j].getTensach())>0)
-			 {
-				if(dss[i]instanceof Sachgiaokhoa && dss[j] instanceof Sachgiaokhoa)
-                                {
-                                    swap1(dss[i],dss[j]);
-                                }
-                                else if(dss[i]instanceof Truyen && dss[j] instanceof Truyen)
-                                {
-                                    swap2(dss[i],dss[j]);
-                                }
-                                else if(dss[i]instanceof Sachgiaokhoa && dss[j] instanceof Truyen)
-                                {
-                                    swap3(dss[i],dss[j]);
-                                }
-                                else
-                                {
-                                    swap3(dss[j],dss[i]);
-                                }
-			 }
-		 }
-	 }
- }
- public int thong_ke_theo_tensach(String Tensach)
+ public int Thongketheotensach(String Tensach)
  {
 	 int dem=0;
 	 for(int i=0;i<n;i++)
@@ -271,7 +414,7 @@ public class Danhsachsach {
             outstream.writeInt(dss[i].getSoluong());
             Truyen a = new Truyen();
             a = (Truyen)dss[i];
-            outstream.writeInt(a.getLuatuoi());
+            outstream.writeUTF(a.getLuatuoi());
             outstream.writeUTF(a.getChude());
              
            }
@@ -315,7 +458,7 @@ public class Danhsachsach {
                    String idgiamgia = instream.readUTF();
                    int dongia = instream.readInt();
                    int soluong = instream.readInt();
-                   int luatuoi = instream.readInt();
+                   String luatuoi = instream.readUTF();
                    String chude = instream.readUTF();
                     dss = Arrays.copyOf(dss,n+1);
                     dss[i] = new Truyen(idsach,tensach,idtacgia,idnhasanxuat,idloai,idgiamgia,dongia,soluong,luatuoi,chude);

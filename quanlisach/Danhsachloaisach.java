@@ -69,14 +69,20 @@ public class Danhsachloaisach {
         n++;
         
     }
-    public void Themk(int k)
+  //Them nhieu loai sach
+    public void Themk()
     {
-        for(int i=0;i<k;i++)
-        {
-            Them();
-        }
+   	 int k;
+   	 System.out.println("\nMoi ban nhap vao so luong can them: ");
+   	 Scanner in = new Scanner(System.in);
+   	 k = in.nextInt();
+   	 in.nextLine();
+   	 for(int i=0 ; i<k;i++)
+   	 {
+   		 Them();
+   	 }
     }
-    public void xoavt(int vitrixoa)
+    public void Xoavt(int vitrixoa)
     {
         for(int i=vitrixoa;i<n-1;i++)
         {
@@ -84,23 +90,31 @@ public class Danhsachloaisach {
         }
         n--;
     }
-    public void xoatheoma(String ma)
+    public void Xoatheoma(String ma)
     {
-        for(int i=0;i<n;i++)
+    	for(int i=0;i<n;i++)
         {
             if(dsls[i].getMaloai().equals(ma))
             {
-                xoavt(i);
+                Xoavt(i);
             }
         }
     }
-    public void Timkiemtheoma(String ma)
+    public void Timkiemtheoma()
     {
+    	String ma;
+    	Scanner in = new Scanner(System.in);
+    	System.out.println("\nNhap vao ma can tim kiem: ");
+    	ma = in.nextLine();
+    	System.out.printf("%-40s","_______________________________________________________________________________________________________");
+        System.out.printf("\n|%-50s|%-50s|","Ma The Loai","Ten The Loai");
+        System.out.printf("\n%-40s","-----------------------------------------------------------------------------------------------------");
         for(int i=0;i<n;i++)
         {
             if(dsls[i].getMaloai().equals(ma))
             {
-                System.out.println(dsls[i].toString());
+                dsls[i].Xuat();
+                System.out.printf("\n%-40s","-----------------------------------------------------------------------------------------------------");
             }
         }
     }
@@ -132,6 +146,7 @@ public class Danhsachloaisach {
                     System.out.println("\n3.Thoat");
                     System.out.println("\nMoi ban Nhap lua chon: ");
                     luachon=sc.nextInt();
+                    sc.nextLine();
                     if(luachon==1)
                     {
                         System.out.println("\nMoi ban Nhap ma moi:");
@@ -140,7 +155,7 @@ public class Danhsachloaisach {
                     }
                     if(luachon==2)
                     {
-                        System.out.println("\nMoi ban Nhap te loai moi:");
+                        System.out.println("\nMoi ban Nhap the loai moi:");
                         tenloaimoi=sc.nextLine();
                         dsls[i].setTenloai(tenloaimoi);
                     }

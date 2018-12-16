@@ -54,7 +54,7 @@ public class Danhsachnhacungcap {
             
         }
     }
-    public void Xoanhacungcap(int vitrixoa){
+    public void Xoavt(int vitrixoa){
         for(int i = vitrixoa ; i < n -1 ; i++)
         {
             dsncc[i] = dsncc[i+1];
@@ -62,34 +62,112 @@ public class Danhsachnhacungcap {
         dsncc = Arrays.copyOf(dsncc,n-1);
         n--;
     }
-    public void Xoanhacungcaptheoma(String ma){
+    public void Xoatheoma(String ma){
         for(int i = 0 ; i < n ; i++)
         {
             if(dsncc[i].getManhacungcap().equals(ma))
             {
-                Xoanhacungcap(i);
+                Xoavt(i);
             }
         }
     }
-    public void Themnhacungcap(){
+    public void Them(){
         dsncc = Arrays.copyOf(dsncc,n+1);
         dsncc[n] = new Nhacungcap();
         dsncc[n].Nhap();
         n++;
     }
-    public void Themnhacungcap(Nhacungcap ncc)
+  //Them nhieu nha cung cap
+    public void Themk()
     {
-        dsncc = Arrays.copyOf(dsncc,n+1);
-        dsncc[n] = new Nhacungcap(ncc);
-        n++;
+   	 int k;
+   	 System.out.println("\nMoi ban nhap vao so luong can them: ");
+   	 Scanner in = new Scanner(System.in);
+   	 k = in.nextInt();
+   	 in.nextLine();
+   	 for(int i=0 ; i<k;i++)
+   	 {
+   		 Them();
+   	 }
     }
-   public void Timkiemnhacungcap(String ma)
+   public void Suatheoma()
    {
+	   String ma;
+	   Scanner in = new Scanner(System.in);
+	   System.out.println("\nNhap vao ma can sua: ");
+	   ma = in.nextLine();
+	   String manccmoi;
+	   String tennccmoi;
+	   String diachimoi;
+	   String dienthoaimoi;
+	   for(int i=0;i<n;i++)
+	   {
+		   int luachon;
+		   if(dsncc[i].getManhacungcap().equals(ma))
+		   {
+			   while(true)
+			   {
+				   System.out.println("\n1.Sua ma nha cung cap.");
+				   System.out.println("\n2.Sua ten nha cung cap.");
+				   System.out.println("\n3.Sua dia chi nha cung cap.");
+				   System.out.println("\n4.Sua dien thoai nha cung cap.");
+				   System.out.println("\n5.Thoat.");
+				   System.out.println("\nMoi ban nhap vao lua chon: ");
+				   luachon=in.nextInt();
+				   in.nextLine();
+				   if(luachon<1||luachon>5)
+				   {
+					   System.out.println("Ban da nhap sai lua chon!!!");
+				   }
+				   if(luachon==1)
+				   {
+					   System.out.println("\nMoi ban nhap vao ma nha cung cap moi: ");
+					   manccmoi= in.nextLine();
+					   dsncc[i].setManhacungcap(manccmoi);
+				   }
+				   if(luachon==2)
+				   {
+					   System.out.println("\nMoi ban nhap vao ten nha cung cap moi: ");
+					   tennccmoi= in.nextLine();
+					   dsncc[i].setTennhacungcap(tennccmoi);
+				   }
+				   if(luachon==3)
+				   {
+					   System.out.println("\nMoi ban nhap vao dia chi moi: ");
+					   diachimoi= in.nextLine();
+					   dsncc[i].setDiachi(diachimoi);
+				   }
+				   if(luachon==4)
+				   {
+					   System.out.println("\nMoi ban nhap vao dien thoai moi: ");
+					   dienthoaimoi= in.nextLine();
+					   dsncc[i].setDienthoai(dienthoaimoi);
+				   }
+				   if(luachon==5)
+				   {
+					   System.out.println("\nBan da thoat sua thanh cong. ");
+					   break;
+				   }
+				   
+			   }
+		   }
+	   }
+   }
+   public void Timkiemnhacungcap()
+   {
+	   String ma;
+	   System.out.println("\nNhap vao ma can tim kiem: ");
+	   Scanner in = new Scanner(System.in);
+		ma = in.nextLine();
+	   	System.out.printf("\n%-100s","______________________________________________________________________________________________________________________________________________________");
+   		System.out.printf("\n|%-15s|%-15s|%-10s|%-10s|","manhacungcap","tennhacungcap","diachi","dienthoai");
+		System.out.printf("\n|%-100s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
        for(int i = 0 ; i < n ; i++)
        {
            if(dsncc[i].getManhacungcap().equals(ma))
            {
-               System.out.println(dsncc[i].toString());
+              dsncc[i].Xuat();
+              System.out.printf("\n|%-10s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
            }
        }
    }

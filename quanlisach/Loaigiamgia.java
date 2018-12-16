@@ -5,6 +5,9 @@
  */
 package quanlisach;
 
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -22,18 +25,15 @@ public class Loaigiamgia {
     {
         sophantram=lgg.sophantram;
     }
-    public void nhap()
+    public void Nhap()
     {
         Scanner nhap=new Scanner(System.in);
-        System.out.println("Nhap vao so phan tram giam gia: ");
+        System.out.println("\nNhap vao so phan tram giam gia: ");
             sophantram=nhap.nextFloat();
     }
-    @Override
-    public String toString() {
-        StringBuilder s= new StringBuilder();
-        s.append("So phan tram: ");
-        s.append(this.sophantram+"%");
-        return s.toString();
+    public void Xuat()
+    {
+    	System.out.printf("\n|%-20s|",sophantram);
     }
     public float getSophantram()
     {
@@ -42,5 +42,16 @@ public class Loaigiamgia {
     public void setSophantram(float sophantram)
     {
         this.sophantram=sophantram;
+    }
+    public void Ghifile(String filename)
+    {
+    	try {
+    		DataOutputStream outstream = new DataOutputStream(new FileOutputStream(filename,true));
+    		outstream.writeFloat(this.sophantram);
+    	}
+    	catch(IOException e)
+    	{
+    		System.out.println("Error "+e.getMessage()+"\n");
+    	}
     }
 }

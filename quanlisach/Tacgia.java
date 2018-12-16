@@ -37,7 +37,7 @@ public class Tacgia {
     public void Nhap()
     {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Moi ban nhap ma tac gia: ");
+        System.out.println("\nMoi ban nhap ma tac gia: ");
         matacgia=sc.nextLine();
         System.out.println("Moi ban nhap ten tac gia: ");
         tentacgia=sc.nextLine();

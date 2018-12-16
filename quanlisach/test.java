@@ -13,9 +13,37 @@ import java.io.IOException;
  */
 public class test {
     public static void main(String[] args) throws IOException {
-        Danhsachthongtingiamgia s=new Danhsachthongtingiamgia();
+       // Danhsachtacgia s=new Danhsachtacgia();
+    //    Danhsachthongtingiamgia s=new Danhsachthongtingiamgia();
+//        Danhsachphieunhap s = new Danhsachphieunhap();
+    	//Danhsachkhachhang s = new Danhsachkhachhang();
+    	//Danhsachhoadon s = new Danhsachhoadon();
+    	//Danhsachnhaxuatban s= new Danhsachnhaxuatban();
+    	//Danhsachchitiethoadon s=new Danhsachchitiethoadon(s);
+    	//Danhsachnhanvien s= new Danhsachnhanvien();
+        Danhsachloaigiamgia s = new Danhsachloaigiamgia();
         s.Nhap();
         s.Xuat();
+       // s.Them();
+//        s.Themk(2);
+//        System.out.println("\nDanh sach sau khi them: ");
+//        s.Xuat();
+//        s.Sua();
+//        s.Xuat();
+       // s.Timkiem();
+       // s.Xuat();
+      //  s.xoavt(2);
+      // s.Xoatheosophantram();
+       // s.Xuat();
+//        s.Xoatheoma("AA");
+//        System.out.println("\nDanh sach sau khi xoa: \n");
+//        s.Xuat();
+//        s.Suatheomasach("AA");
+//        s.Xuat();
+        //.Timkiemtheoma();
+        s.Sua();
+        s.Xuat();
+       // s.Xuat();
     }
     
 }

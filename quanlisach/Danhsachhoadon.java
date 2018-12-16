@@ -36,13 +36,13 @@ public class Danhsachhoadon {
         this.n = ds.n; 
         this.dshd = Arrays.copyOf(ds.dshd,n);
     }
-    public void nhap()
+    public void Nhap()
     {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhap so luong hoa don:");
         this.n = sc.nextInt();
+        dshd = Arrays.copyOf(dshd, n);
         for(int i=0; i<n; i++)
-            dshd = Arrays.copyOf(dshd, n);
         {
             dshd[i] = new Hoadon();
             dshd[i].nhap();
@@ -60,7 +60,7 @@ public class Danhsachhoadon {
 		}
     }
     
-    public void xoahoadon(int vitrixoa)
+    public void Xoavt(int vitrixoa)
     {
         for(int i = vitrixoa; i<n-1; i++)
         {
@@ -69,42 +69,60 @@ public class Danhsachhoadon {
         dshd = Arrays.copyOf(dshd, n-1);
         n--;
     }
-    public void xoahoadontheoma(String ma)
+    public void Xoatheoma(String ma)
     {
         for(int i =0; i<n; i++)
         {
             if(dshd[i].getMahoadon().equals(ma))
             {
-                xoahoadon(i);
+                Xoavt(i);
             }
         }
     }
-    public void them1hoadon()
+    public void Them()
     {
       dshd = Arrays.copyOf(dshd, n+1);
       dshd[n] =new Hoadon();
       dshd[n].nhap();
       n++;
     }
-    public void themnhieuhoadon(int k)
+  //Them nhieu hoa don
+    public void Themk()
     {
-        for(int i=0; i<k; i++)
-        {
-            them1hoadon();
-        }
+   	 int k;
+   	 System.out.println("\nMoi ban nhap vao so luong can them: ");
+   	 Scanner in = new Scanner(System.in);
+   	 k = in.nextInt();
+   	 in.nextLine();
+   	 for(int i=0 ; i<k;i++)
+   	 {
+   		 Them();
+   	 }
     }
-   public void Timkiemkhachhang(String ma)
+   public void Timkiemtheoma()
    {
+	   String ma;
+	   System.out.println("\nMoi ban nhap vao ma can tim kiem: ");
+	   Scanner in =new Scanner(System.in);
+	   ma= in.nextLine();
+	   	System.out.printf("\n%-100s","______________________________________________________________________________________________________________________________________________________");
+   		System.out.printf("\n|%-15s|%-15s|%-15s|%-15s|%-15s|","Mahoadon","Makhachhang","Manhanvien","Ngaylaphoadon","Tongtien");
+		System.out.printf("\n|%-100s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
        for(int i = 0 ; i < n ; i++)
        {
            if(dshd[i].getMahoadon().equals(ma))
            {
-               System.out.println(dshd[i].toString());
+               dshd[i].Xuat();
+               System.out.printf("\n|%-10s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
            }
        }
    }
-   public void Suatheoma(String ma)
+   public void Suatheoma()
     {
+	   String ma;
+	   Scanner in = new Scanner(System.in);
+	   System.out.println("\nNhap vao ma can sua: ");
+	   ma = in.nextLine();
         for(int i = 0 ; i < n ; i++)
         {
             if(dshd[i].getMahoadon().equals(ma))
@@ -112,14 +130,14 @@ public class Danhsachhoadon {
                 int luachon;
                 while(true)
                 {
-                    System.out.println("1.Sua ma hoa don ");
+                    System.out.println("\n1.Sua ma hoa don ");
                     System.out.println("2.Sua ma khach hang ");
                     System.out.println("3.Sua ma nhan vien ");
                     System.out.println("4.Sua ngay lap hoa don ");
                     System.out.println("5.Thoat");
                     System.out.println("Moi ban nhap lua chon ");
-                    Scanner in = new Scanner(System.in);
                     luachon = in.nextInt();
+                    in.nextLine();
                     if(luachon == 1)
                     {
                         String mamoi;
@@ -130,7 +148,7 @@ public class Danhsachhoadon {
                     else if (luachon == 2)
                     {
                         String makhachhang;
-                        System.out.println("Nhap vao ma khach hang mơi ");
+                        System.out.println("Nhap vao ma khach hang moi ");
                         makhachhang = in.nextLine();
                         dshd[i].setMakhachhang(makhachhang);
                     }
@@ -148,7 +166,7 @@ public class Danhsachhoadon {
                         ngaylaphoadon = in.nextLine();
                         dshd[i].setNgaylaphoadon(ngaylaphoadon);
                     }
-                    else
+                    else if(luachon==5)
                     {
                         break;
                     }

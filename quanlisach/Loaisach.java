@@ -47,9 +47,6 @@ public class Loaisach {
     {
         System.out.printf("\n|%-50s|%-50s|",maloai,tenloai);
     }
-   {
-       
-   }
 
     public String getMaloai() {
         return maloai;

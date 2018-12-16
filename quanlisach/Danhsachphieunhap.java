@@ -44,14 +44,14 @@ public class Danhsachphieunhap {
         }
         
     }
-    public void Xuatdanhsachphieunhap(){
-    	System.out.printf("\n%-100s","______________________________________________________________________________________________________________________________________________________");
+    public void Xuat(){
+    	System.out.printf("\n%-100s","________________________________________________________________________________________");
     	System.out.printf("\n|%-13s|%-10s|%-13s|%-10s|%-10s|%-13s|%-11s|","Maphieunhap","Masach","Ngaynhap","Soluong","Dongia","Manhacungcap","Manhanvien");
-		System.out.printf("\n|%-100s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("\n|%-100s","---------------------------------------------------------------------------------------");
 		for(int i=0;i<n;i++)
 		{
 			dspn[i].Xuat();
-			System.out.printf("\n|%-10s","-----------------------------------------------------------------------------------------------------------------------------------------------------");
+			System.out.printf("\n|%-10s","---------------------------------------------------------------------------------------");
 		}
     }
     public void xoavt(int vitrixoa){
@@ -78,17 +78,126 @@ public class Danhsachphieunhap {
         n++;
     }
     
-    public void ThemK(Phieunhap phieu)
+  //Them nhieu phieu nhap
+    public void Themk()
     {
-        Them();
+   	 int k;
+   	 System.out.println("\nMoi ban nhap vao so luong can them: ");
+   	 Scanner in = new Scanner(System.in);
+   	 k = in.nextInt();
+   	 in.nextLine();
+   	 for(int i=0 ; i<k;i++)
+   	 {
+   		 Them();
+   	 }
     }
-   public void Timkiemphieunhap(String ma)
+    public void Suatheoma()
+    {
+    	String ma;
+    	System.out.println("\nNhap vao ma de can sua: ");
+    	Scanner in =new Scanner(System.in);
+    	ma = in.nextLine();
+    	String maphieunhapmoi;
+    	String masachmoi;
+    	String ngaynhapmoi;
+    	int soluongmoi;
+    	float dongiamoi;
+    	String manhacungcapmoi;
+    	String manhanvienmoi;
+    	for(int i=0 ; i<n ;i++)
+    	{
+    		if(dspn[i].getMaphieunhap().equals(ma))
+    		{
+    			int luachon;
+    			while(true)
+    			{
+    				System.out.println("\n1.Sua ma phieu nhap.");
+    				System.out.println("\n2.Sua ma sach.");
+    				System.out.println("\n3.Sua ngay nhap.");
+    				System.out.println("\n4.Sua so luong.");
+    				System.out.println("\n5.Sua don gia.");
+    				System.out.println("\n6.Sua ma nha cung cap.");
+    				System.out.println("\n7.Sua ma nhan vien.");
+    				System.out.println("\n8.Thoat.");
+    				System.out.println("\nMoi ban nhap vao lua chon: ");
+    				luachon= in.nextInt();
+    				in.nextLine();
+    				if(luachon<1 || luachon>8)
+    				{
+    					System.out.println("\nMoi ban nhap dung lua chon. Cam on!!!");
+    				}
+    				if(luachon==1)
+    				{
+    					System.out.println("\nMoi ban nhap vao ma phieu nhap moi: ");
+    					maphieunhapmoi=in.nextLine();
+    					dspn[i].setMaphieunhap(maphieunhapmoi);
+    				}
+    				if(luachon==2)
+    				{
+    					System.out.println("\nMoi ban nhap vao ma sach moi: ");
+    					masachmoi=in.nextLine();
+    					dspn[i].setMasach(masachmoi);
+    				}
+    				if(luachon==3)
+    				{
+    					System.out.println("\nMoi ban nhap vao ngay nhap moi: ");
+    					ngaynhapmoi=in.nextLine();
+    					dspn[i].setNgaynhap(ngaynhapmoi);
+    				}
+    				if(luachon==4)
+    				{
+    					System.out.println("\nMoi ban nhap vao so luong moi: ");
+    					soluongmoi=in.nextInt();
+    					in.nextLine();
+    					dspn[i].setSoluong(soluongmoi);
+    				}
+    				if(luachon==5)
+    				{
+    					System.out.println("\nMoi ban nhap vao don gia moi: ");
+    					dongiamoi=in.nextFloat();
+    					in.nextLine();
+    					dspn[i].setDongia(dongiamoi);
+    				}
+    				if(luachon==6)
+    				{
+    					System.out.println("\nMoi ban nhap vao ma nha cung cap moi: ");
+    					manhacungcapmoi=in.nextLine();
+    					dspn[i].setManhacungcap(manhacungcapmoi);
+    				}
+    				if(luachon==7)
+    				{
+    					System.out.println("\nMoi ban nhap vao ma nhan vien moi: ");
+    					manhanvienmoi=in.nextLine();
+    					dspn[i].setManhanvien(manhanvienmoi);
+    				}
+    				if(luachon==8)
+    				{
+    					System.out.println("\nBan da thoat thanh cong.");
+    					break;
+    				}	
+    			}
+    		}
+//    		if(dspn[i].getMaphieunhap()!=ma)
+//    		{
+//    			System.out.println("\nKhong tim thay ma can sua.");
+//    		}
+    	}
+    }
+   public void Timkiemtheoma()
    {
+	   Scanner in =new Scanner(System.in);
+	   String ma;
+	   System.out.println("\nNhap ma can tim kiem: ");
+	   ma = in.nextLine();
+	   	System.out.printf("\n%-100s","________________________________________________________________________________________");
+   		System.out.printf("\n|%-13s|%-10s|%-13s|%-10s|%-10s|%-13s|%-11s|","Maphieunhap","Masach","Ngaynhap","Soluong","Dongia","Manhacungcap","Manhanvien");
+		System.out.printf("\n|%-100s","---------------------------------------------------------------------------------------");
        for(int i = 0 ; i < n ; i++)
        {
            if(dspn[i].getMaphieunhap().equals(ma))
            {
-               System.out.println(dspn[i].toString());
+               dspn[i].Xuat();
+               System.out.printf("\n|%-10s","---------------------------------------------------------------------------------------");
            }
        }
    }

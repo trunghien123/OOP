@@ -19,10 +19,10 @@ import java.util.Scanner;
 //import org.omg.CORBA.DataInputStream;
 
 public class Truyen extends Sach{
- private int luatuoi;
+ private String luatuoi;
  private String chude;
  	public Truyen() {}
- 	public Truyen(String masach, String tensach, String matacgia, String manhasanxuat, String maloai,String magiamgia, int dongia, int soluong, int luatuoi, String chude)
+ 	public Truyen(String masach, String tensach, String matacgia, String manhasanxuat, String maloai,String magiamgia, int dongia, int soluong, String luatuoi, String chude)
  	{
  		super(masach,tensach,matacgia,manhasanxuat,maloai,magiamgia,dongia,soluong);
  		this.luatuoi=luatuoi;
@@ -39,8 +39,7 @@ public class Truyen extends Sach{
 	 	super.Nhap();
 	 	Scanner nhap=new Scanner(System.in);
 	 	System.out.println("Nhap vao lua tuoi: ");
-	 	 	luatuoi=nhap.nextInt();
-                        nhap.nextLine();
+	 	 	luatuoi=nhap.nextLine();
 	 	
 	 	System.out.println("Nhap vao chu de: ");
 	 	 	chude=nhap.nextLine();
@@ -53,7 +52,7 @@ public class Truyen extends Sach{
 	 	String kethua="Luatuoi : "+luatuoi+" , Chude : "+chude;
 	 	System.out.printf("%-30s|",kethua);
 	}
- 	public int getLuatuoi() 
+ 	public String getLuatuoi() 
  	{
  		return luatuoi;
  	}
@@ -66,7 +65,7 @@ public class Truyen extends Sach{
         this.chude = chude;
     }
  	
- 	public void setLuatuoi(int luatuoi)
+ 	public void setLuatuoi(String luatuoi)
  	{
  		this.luatuoi=luatuoi;
  	}

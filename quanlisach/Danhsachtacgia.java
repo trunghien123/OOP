@@ -47,49 +47,64 @@ public class Danhsachtacgia {
         }
     }
     public void Xuat(){
-        System.out.printf("\n%-100s","____________________________________________________________________________________________________");
+        System.out.printf("\n%-100s","______________________________________________________________________________________________");
         System.out.printf("\n|%-30s|%-30s|%-30s|","Ma tac gia","Ten tac gia","Ngay sinh");
-        System.out.printf("\n|%-100s","----------------------------------------------------------------------------------------------------");
+        System.out.printf("\n|%-100s","---------------------------------------------------------------------------------------------");
         for(int i=0;i<n;i++)
         {
             dstg[i].Xuat();
-           System.out.printf("\n|%-30s","----------------------------------------------------------------------------------------------------");
+           System.out.printf("\n|%-30s","---------------------------------------------------------------------------------------------");
 
         }
     }
-    public void Them1tacgia()
+    public void Them()
     {
         dstg = Arrays.copyOf(dstg,n+1);
         dstg[n] = new Tacgia();
         dstg[n].Nhap();
         n++;      
     }
-    public void Themnhieutacgia(int k)
+    //Them nhieu tac gia
+    public void Themk()
     {
-        for(int i = 0 ; i < k ; i++)
-        {
-            Them1tacgia();
-        }
+   	 int k;
+   	 System.out.println("\nMoi ban nhap vao so luong can them: ");
+   	 Scanner in = new Scanner(System.in);
+   	 k = in.nextInt();
+   	 in.nextLine();
+   	 for(int i=0 ; i<k;i++)
+   	 {
+   		 Them();
+   	 }
     }
-    public void xoavt(int vitrixoa){
+    public void Xoavt(int vitrixoa){
         for(int i = vitrixoa ; i < n - 1 ; i++)
         {
            dstg[i] = dstg[i+1];
         }
         n--;
     }
-    public void Xoatheoma(String ma)
+    //Xoa theo ma tac gia
+    public void Xoatheoma()
     {
-        for(int i = 0 ; i < n ; i++)
-        {
-            if(dstg[i].getMatacgia().equals(ma))
-            {
-                xoavt(i);
-            }
-        }
+   	 String ma;
+   	 Scanner in = new Scanner(System.in);
+   	 System.out.println("\nMoi ban nhap vao ma tac gia de xoa: ");
+   	 ma= in.nextLine();
+   	 for(int i=0; i<n;i++)
+   	 {
+   		 if(dstg[i].getMatacgia().equals(ma));
+   		 {
+   			 Xoavt(i);
+   		 }
+   	 }
     }
-    public void Suatheoma(String ma)
+    public void Suatheoma()
     {
+    	String ma;
+   	 	Scanner in = new Scanner(System.in);
+   	 	System.out.println("\nMoi ban nhap vao ma giam gia can sua: ");
+   	  	ma = in.nextLine();
         for(int i = 0 ; i < n ; i++)
         {
             if(dstg[i].getMatacgia().equals(ma))
@@ -97,13 +112,17 @@ public class Danhsachtacgia {
                 int luachon;
                 while(true)
                 {
-                    System.out.println("1.Sua ma tac gia ");
+                    System.out.println("\n1.Sua ma tac gia ");
                     System.out.println("2.Sua ten tac gia ");
                     System.out.println("3.Sua ngay sinh ");
                     System.out.println("4.Thoat");
                     System.out.println("Moi ban nhap lua chon ");
-                    Scanner in = new Scanner(System.in);
                     luachon = in.nextInt();
+                    in.nextLine();
+                    if(luachon<1 || luachon>4)
+   				    {
+   					 System.out.println("\nMoi ban nhap dung lua chon. Cam on!!!");
+   				    }
                     if(luachon == 1)
                     {
                         String mamoi;
@@ -125,8 +144,9 @@ public class Danhsachtacgia {
                         ngaysinh = in.nextLine();
                         dstg[i].setNgaysinh(ngaysinh);
                     }
-                    else
+                    else if(luachon==4)
                     {
+                    	System.out.println("\nBan da thoat sua thanh cong.");
                         break;
                     }
                     
@@ -134,13 +154,28 @@ public class Danhsachtacgia {
             }
         }
     }
-    public void Timkiemtheoma(String ma){
+    public void Timkiemtheoma(){
+    	String ma;
+    	boolean tim=false;
+    	System.out.println("\nNhap vao ma can tim kiem: ");
+    	Scanner in = new Scanner(System.in);
+    	ma = in.nextLine();
+    	System.out.println("\nDanh sach da tim kiem: ");
+    	System.out.printf("\n%-100s","______________________________________________________________________________________________");
+        System.out.printf("\n|%-30s|%-30s|%-30s|","Ma tac gia","Ten tac gia","Ngay sinh");
+        System.out.printf("\n|%-100s","---------------------------------------------------------------------------------------------");
         for(int i = 0 ; i < n ; i++)
         {
             if(dstg[i].getMatacgia().equals(ma))
             {
-                System.out.println(dstg[i].toString());
+            	tim=true;
+                dstg[i].Xuat();
+                System.out.printf("\n|%-30s","---------------------------------------------------------------------------------------------");
             }
+        }
+        if(tim==false)
+        {
+        	System.out.println("\nKhong tim thay ma ban vua nhap.");
         }
     }
      public void ghifile(String filename) throws FileNotFoundException, IOException
