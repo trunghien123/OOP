@@ -1,2 +1,7 @@
 sgk SachGiaoKhoa
 tr Truyen
+trc TruyenCuoi
+trm TruyenMa
+trnn TruyenNguNgon
+an Anime
+trcb TruyenChamBiem
