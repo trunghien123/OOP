@@ -2,4 +2,9 @@ SP01 DRM 2 89000 -thanhtien-
 SP02 AV2 1 15000 -thanhtien-
 SP03 T2  3 25000 -thanhtien-
 SP04 NRT 1 25000 -thanhtien-
-SP05 T1  2 
+SP05 T1  2 50000 -thanhtien-
+SP06 NV1 3 35000 -thanhtien-
+SP07 AV1 2 30000 -thanhtien-
+SP08 SAH 1 20000 -thanhtien-
+SP09 CN  2 60000 -thanhtien-
+SP10 TM  1 99000 -thanhtien-
