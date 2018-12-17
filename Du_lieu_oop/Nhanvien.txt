@@ -1,10 +1,10 @@
-H1 NguyenVanA 15/05/1996 6trieu
-H2 NguyenVanB 14/03/1997 6trieu
-H3 NguyenVanC 08/11/1992 5trieu
-H4 NguyenVanD 25/10/1987 5trieu
-H5 NguyenVanE 30/10/1999 6trieu
-H6 NguyenVanF 14/11/1998 6trieu
-H7 NguyenVanG 16/14/1998 6trieu
-H8 NguyenVanH 20/11/1996 6trieu
-H9 NguyenVanI 15/03/1991 6trieu
-H10 NguyenVanK 16/11/1999 6trieu
+H1 NguyenVanA 15/05/1996 6trieu vana 123 admin
+H2 NguyenVanB 14/03/1997 6trieu vanb 123 nhanvien
+H3 NguyenVanC 08/11/1992 5trieu vanc 123 nhanvien
+H4 NguyenVanD 25/10/1987 5trieu vand 123 nhanvien
+H5 NguyenVanE 30/10/1999 6trieu vane 123 nhanvien
+H6 NguyenVanF 14/11/1998 6trieu vanf 123 nhanvien
+H7 NguyenVanG 16/14/1998 6trieu vang 123 nhanvien
+H8 NguyenVanH 20/11/1996 6trieu vanh 123 nhanvien
+H9 NguyenVanI 15/03/1991 6trieu vani 123 nhanvien
+H10 NguyenVanK 16/11/1999 6trieu vank 123 nhanvien
