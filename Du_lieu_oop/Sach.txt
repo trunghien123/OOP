@@ -1,13 +1,13 @@
 //Sgk
-T1  ToanLop9     GDVN GDVN sgk 50000 10 Toan     9
-T2  ToanLop12    GDVN GDVN sgk 25000 5  Toan     12
-AV1 TiengAnhLop6 GDVN GDVN sgk 30000 6  TiengAnh 6
-AV2 TiengAnhLop2 GDVN GDVN sgk 15000 8  TiengAnh 2
-NV1 NguVanLop11  GDVN GDVN sgk 35000 4  NguVan   11
+T1  ToanLop9     GDVN GDVN KM01 sgk 50000 10 Toan     9
+T2  ToanLop12    GDVN GDVN KM02 sgk 25000 5  Toan     12
+AV1 TiengAnhLop6 GDVN GDVN KM03 sgk 30000 6  TiengAnh 6
+AV2 TiengAnhLop2 GDVN GDVN KM04 sgk 15000 8  TiengAnh 2
+NV1 NguVanLop11  GDVN GDVN KM05 sgk 35000 4  NguVan   11
 //Truyen
 //lua tuoi khai báo kieu String
-DRM Doraemon           FF  KD tr 89000 6 all hoathinh
-SAH HocVienSieuAnhHung KH  KD an 20000 7 7+  vientuong
-NRT Naruto	       MK  HM an 25000 7 all hoathinh
-CN  ThamTuLungDanhConan AG TN tr 60000 4 all trinhtham
-TM  DuoiQuy            MV  KD trm 99000 8 16+ kinhdi
+DRM Doraemon           FF  KD KM06 tr 89000 6 all hoathinh
+SAH HocVienSieuAnhHung KH  KD KM07 an 20000 7 7+  vientuong
+NRT Naruto	       MK  HM KM08 an 25000 7 all hoathinh
+CN  ThamTuLungDanhConan AG TN KM09 tr 60000 4 all trinhtham
+TM  DuoiQuy            MV  KD KM10 trm 99000 8 16+ kinhdi
